@@ -35,6 +35,6 @@ Siansmale::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = false
 
-  Paperclip.options[:command_path] = "/usr/local/Cellar/imagemagick/6.7.7-6/bin"  
+  Paperclip.options[:command_path] = "/usr/local/Cellar/imagemagick/6.7.7-6"
 
 end
