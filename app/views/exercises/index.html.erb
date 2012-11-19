@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Select</th>
     <th>Name</th>
     <th>Description</th>
     <th>Image</th>
@@ -12,9 +13,10 @@
 
 <% @exercises.each do |exercise| %>
   <tr>
+    <td></td>
     <td><%= exercise.name %></td>
     <td><%= exercise.description %></td>
-    <td><%= exercise.image %></td>
+    <td><%= image_tag exercise.image.url(:thumb) %></td>
     <td><%= link_to 'Show', exercise %></td>
     <td><%= link_to 'Edit', edit_exercise_path(exercise) %></td>
     <td><%= link_to 'Destroy', exercise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
