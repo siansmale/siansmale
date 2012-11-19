@@ -7,6 +7,8 @@ class Exercise < ActiveRecord::Base
     thumb: '100x100>',
     square: '200x200#',
     medium: '300x300>'
-  }
+  },
+  :url => ":s3_domain_url",
+  :path => "siansmale.s3.amazonaws.com"
 
 end
