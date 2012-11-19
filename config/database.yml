@@ -1,0 +1,13 @@
+development:
+  adapter: postgresql
+  database: siansmale_dev
+  host: localhost
+test:
+  adapter: postgresql
+  database: siansmale_test
+  host: localhost
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: siansmale_prod
