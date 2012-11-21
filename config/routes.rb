@@ -6,6 +6,8 @@ Siansmale::Application.routes.draw do
 
   match '/program' => 'programs#view'
 
+  match '/contact' => 'static#contact'
+
   root :to => "static#home"
 
   # The priority is based upon order of creation:
