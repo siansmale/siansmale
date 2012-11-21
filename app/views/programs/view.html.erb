@@ -9,7 +9,7 @@
 
 <% @exercises.each do |exercise| %>
   <tr>
-    <td><%= image_tag exercise.image.url(:medium) %></td>
+    <td class="program-image"><%= image_tag exercise.image.url(:medium) %></td>
     <td><%= exercise.name %></td>
     <td><%= exercise.description %></td>
   </tr>
