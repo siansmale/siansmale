@@ -13,6 +13,7 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <%= yield(:head) %>
+    <%= render 'layouts/analytics' %>
   </head>
   <body>
     <header class="navbar navbar-inverse navbar-fixed-top">
@@ -37,6 +38,5 @@
         </div>
       </div> <!--! end of .container -->
     </div> <!--! end of #main -->
-    <%= render 'layouts/analytics' %>
   </body>
 </html>
