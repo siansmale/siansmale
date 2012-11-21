@@ -2,16 +2,14 @@
 
 <table class="table table-striped">
   <tr>
-    <th>Image</th>
-    <th>Name</th>
+    <th>Picture</th>
     <th>Description</th>
   </tr>
 
 <% @exercises.each do |exercise| %>
   <tr>
     <td class="program-image"><%= image_tag exercise.image.url(:medium) %></td>
-    <td><%= exercise.name %></td>
-    <td contenteditable="true"><%= exercise.description %></td>
+    <td contenteditable="true"><b><%= exercise.name %></b><br><%= exercise.description %></td>
   </tr>
 <% end %>
 </table>
