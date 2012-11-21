@@ -11,7 +11,7 @@
   <tr>
     <td class="program-image"><%= image_tag exercise.image.url(:medium) %></td>
     <td><%= exercise.name %></td>
-    <td><%= exercise.description %></td>
+    <td contenteditable="true"><%= exercise.description %></td>
   </tr>
 <% end %>
 </table>
