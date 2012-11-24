@@ -2,19 +2,16 @@ require 'spec_helper'
 
 describe Exercise do
 
-  # before do
-  #   @user = User.new(:first_name => "Jason", :last_name => "Smale", :email => "jason.smale@gmail.com" )
-  # end
+  describe "when description is really long" do
 
-  # subject { @user }
+    before do
+      @exercise = Exercise.new(:description => rand(36**1000).to_s(36))
+    end
 
-  # it { should respond_to(:first_name) }
-  # it { should respond_to(:last_name) }
-  # it { should respond_to(:email) }
+    subject { @exercise }
 
-  # describe "when name is not present" do
-  #   before { @user.first_name = " " }
-  #   it { should_not be_valid }
-  # end
+    it { should respond_to :description }
+
+  end
 
 end
