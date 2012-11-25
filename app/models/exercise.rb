@@ -11,10 +11,10 @@ class Exercise < ActiveRecord::Base
   storage: :s3,
   path: ":attachment/:id/:style.:extension",
   url: ":s3_domain_url",
-  bucket: 'siansmale',
+  bucket: ENV["AWS_BUCKET"],
   s3_credentials: {
-    access_key_id: "AKIAISAZ6DVU3Q3NZYPA",
-    secret_access_key: "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"
+    access_key_id: ENV["AWS_ACCESS_KEY_ID"],
+    secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]
   }
 
 end
