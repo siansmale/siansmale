@@ -9,10 +9,12 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-config = YAML.load(File.read(File.expand_path('../vars.yml', __FILE__)))
-config.merge! config.fetch(Rails.env, {})
-config.each do |key, value|
-    ENV[key] = value.to_s unless value.kind_of? Hash
+if FileTest.exists?(File.expand_path('../vars.yml', __FILE__))
+    config = YAML.load(File.read(File.expand_path('../vars.yml', __FILE__)))
+    config.merge! config.fetch(Rails.env, {})
+    config.each do |key, value|
+        ENV[key] = value.to_s unless value.kind_of? Hash
+    end
 end
 
 module Siansmale
