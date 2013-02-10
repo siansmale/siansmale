@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20121119062435) do
 
   create_table "exercises", :force => true do |t|
     t.string   "name"
-    t.text   "description"
+    t.text     "description"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.string   "image_file_name"
