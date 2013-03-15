@@ -3,4 +3,7 @@ class StaticController < ApplicationController
   end
   def contact
   end
+  def blog
+    render 'blog-lactating-breast'
+  end
 end

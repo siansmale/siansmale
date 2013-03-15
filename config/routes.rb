@@ -8,6 +8,8 @@ Siansmale::Application.routes.draw do
 
   match '/contact' => 'static#contact'
 
+  match '/blog/lactating-breast' => 'static#blog'
+
   root :to => "static#home"
 
   # The priority is based upon order of creation:
