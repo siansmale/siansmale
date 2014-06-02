@@ -4,4 +4,7 @@
     display: none;
   }
 
+  tr {
+    page-break-inside: avoid;
+  }
 }
