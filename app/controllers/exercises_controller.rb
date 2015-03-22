@@ -1,6 +1,6 @@
 class ExercisesController < ApplicationController
 
-  http_basic_authenticate_with :name => ENV['USERNAME'], :password => ENV['PASSWORD'], :except => :index
+  http_basic_authenticate_with :name => Rails.application.secrets.username, :password => Rails.application.secrets.password, :except => :index
 
   # GET /exercises
   # GET /exercises.json
@@ -43,7 +43,7 @@ class ExercisesController < ApplicationController
   # POST /exercises
   # POST /exercises.json
   def create
-    @exercise = Exercise.new(params[:exercise])
+    @exercise = Exercise.new(exercise_params)
 
     respond_to do |format|
       if @exercise.save
@@ -62,7 +62,7 @@ class ExercisesController < ApplicationController
     @exercise = Exercise.find(params[:id])
 
     respond_to do |format|
-      if @exercise.update_attributes(params[:exercise])
+      if @exercise.update_attributes(exercise_params)
         format.html { redirect_to @exercise, notice: 'Exercise was successfully updated.' }
         format.json { head :no_content }
       else
@@ -82,5 +82,19 @@ class ExercisesController < ApplicationController
       format.html { redirect_to exercises_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def exercise_params
+    params.require(:exercise).permit(
+      :description,
+      :image,
+      :name,
+      :image_file_name,
+      :image_content_type,
+      :image_file_size,
+      :image_updated_at
+    )
   end
 end

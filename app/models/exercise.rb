@@ -1,8 +1,4 @@
 class Exercise < ActiveRecord::Base
-  attr_accessible :description, :image, :name, :image_file_name, :image_content_type, :image_file_size, :image_updated_at
-
-  validates_attachment_content_type :image, :content_type=>['image/jpeg', 'image/png', 'image/gif']
-
   has_attached_file :image, styles: {
     thumb: '100x100>',
     square: '200x200#',
@@ -11,10 +7,10 @@ class Exercise < ActiveRecord::Base
   storage: :s3,
   path: ":attachment/:id/:style.:extension",
   url: ":s3_domain_url",
-  bucket: ENV["AWS_BUCKET"],
+  bucket: Rails.application.secrets.aws_bucket,
   s3_credentials: {
-    access_key_id: ENV["AWS_ACCESS_KEY_ID"],
-    secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]
+    access_key_id: Rails.application.secrets.aws_access_key_id,
+    secret_access_key: Rails.application.secrets.aws_secret_access_key
   }
-
+  validates_attachment_content_type :image, :content_type=>['image/jpeg', 'image/png', 'image/gif']
 end

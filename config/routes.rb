@@ -1,10 +1,7 @@
-Siansmale::Application.routes.draw do
-
-  get "programs/view"
+Rails.application.routes.draw do
 
   resources :exercises
-
-  match '/program' => 'programs#view'
+  get 'programs', to: 'programs/view'
 
   root :to => "exercises#index"
 
