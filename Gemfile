@@ -5,7 +5,7 @@ gem 'rails', '4.2.1'
 gem 'pg', '~>0.18.1'
 gem 'paperclip'
 gem 'aws-sdk'
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 gem 'sass-rails'
 gem 'coffee-rails'
