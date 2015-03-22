@@ -4,7 +4,7 @@ ruby "2.1.5"
 gem 'rails', '4.2.1'
 gem 'pg', '~>0.18.1'
 gem 'paperclip'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 gem 'rails_12factor', group: :production
 
 gem 'sass-rails'
