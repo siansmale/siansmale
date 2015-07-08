@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :exercises
-  get 'programs', to: 'programs/view'
+  resources :programs, only: [:create]
 
   root :to => "exercises#index"
 
