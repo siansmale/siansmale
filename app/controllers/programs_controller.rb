@@ -1,5 +1,6 @@
 class ProgramsController < ApplicationController
-  def show
+  def create
     @exercises = Exercise.where(:id => params[:exercises].map(&:to_i))
+    render :show
   end
 end
