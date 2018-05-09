@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
-ruby "2.1.5"
+ruby "2.4.4"
 
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.10'
 gem 'pg', '~>0.18.1'
 gem 'paperclip'
-gem 'aws-sdk', '< 2.0'
+gem 'aws-sdk'
 gem 'rails_12factor', group: :production
 
 gem 'sass-rails'
@@ -22,5 +22,5 @@ end
 group :test do
   gem 'capybara'
   gem 'rb-fsevent'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
 end

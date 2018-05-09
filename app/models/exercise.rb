@@ -8,6 +8,7 @@ class Exercise < ActiveRecord::Base
   path: ":attachment/:id/:style.:extension",
   url: ":s3_domain_url",
   bucket: Rails.application.secrets.aws_bucket,
+  s3_region: 'us-east-1',
   s3_credentials: {
     access_key_id: Rails.application.secrets.aws_access_key_id,
     secret_access_key: Rails.application.secrets.aws_secret_access_key
